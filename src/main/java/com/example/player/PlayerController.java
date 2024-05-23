@@ -32,12 +32,12 @@ class PlayerController {
     }
 
     @PutMapping("/players/{playersId}")
-    public Player updatePlayer(@PathVariable("playersId") int playerId, Player play) {
+    public Player updatePlayer(@PathVariable("playersId") int playerId,@RequestBody Player play) {
         return service.updatePlayer(playerId, play);
     }
 
     @DeleteMapping("/players/{playersId}")
     public void deletePlayer(@PathVariable("playersId") int playerId) {
-        service.deletePlayer(playerId);
+        service.deletePlayer(playerId);                                    
     }
 }
